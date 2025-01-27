@@ -1,0 +1,58 @@
+﻿<Window x:Class="PostLAN.Management.Views.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PostLAN.Management.Views.Windows"
+        xmlns:windows="clr-namespace:PostLAN.Management.ViewModels.Windows"
+        xmlns:kamishibai="clr-namespace:Kamishibai;assembly=Kamishibai.View"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:interactivity="clr-namespace:Reactive.Bindings.Interactivity;assembly=ReactiveProperty.WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="900" Width="1200">
+
+    <Window.DataContext>
+        <windows:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <ui:NavigationView IsSettingsVisible="False" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <interactivity:EventToReactiveCommand Command="{Binding SelectionChangedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem
+                    Tag="DashBoard"
+                    Content="ダッシュボード"
+                    Icon="Home"
+                    IsSelected="True"/>
+                <ui:NavigationViewItem
+                    Tag="Address"
+                    Content="アドレス"
+                    Icon="Account"/>
+            </ui:NavigationView.MenuItems>
+
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem
+                    Tag="Settings"
+                    Content="設定"
+                    Icon="Setting"/>
+            </ui:NavigationView.FooterMenuItems>
+
+            <ScrollViewer>
+                <kamishibai:NavigationFrame Grid.Row="1"/>
+            </ScrollViewer>
+        </ui:NavigationView>
+    </Grid>
+</Window>
