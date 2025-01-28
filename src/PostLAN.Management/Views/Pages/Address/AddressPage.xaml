@@ -13,7 +13,32 @@
         <vm:AddressPageViewModel/>
     </UserControl.DataContext>
 
-    <Grid>
-        <TextBlock Text="アドレス"/>
-    </Grid>
+    <StackPanel Margin="12">
+        <ScrollViewer Height="200">
+            <DataGrid
+                ItemsSource="{Binding AddressModel}"
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="名称" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="IP アドレス" Binding="{Binding IP}"/>
+                    <DataGridTextColumn Header="ポート番号" Binding="{Binding Port}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+
+        <GroupBox Header="新規登録">
+            <StackPanel>
+                <TextBlock Text="名称"/>
+                <TextBox Text="{Binding InputName.Value}"/>
+                <TextBlock Text="IP アドレス"/>
+                <TextBox Text="{Binding InputIP.Value}"/>
+                <TextBlock Text="ポート番号"/>
+                <TextBox Text="{Binding InputPort.Value}"/>
+
+                <Button Content="登録する" Command="{Binding RegistrationAddressCommand}"/>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
 </UserControl>

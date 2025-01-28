@@ -1,4 +1,6 @@
 ﻿using Kamishibai;
+using PostLAN.Management.Models.Address;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +12,30 @@ namespace PostLAN.Management.ViewModels.Pages.Address
     [Navigate]
     public class AddressPageViewModel
     {
+        public ReactiveCollection<AddressModel> AddressModel { get; } = [];
+
+        public ReactivePropertySlim<string> InputName { get; } = new();
+        public ReactivePropertySlim<string> InputIP { get; } = new();
+        public ReactivePropertySlim<string> InputPort { get; } = new();
+
+        public ReactiveCommandSlim RegistrationAddressCommand { get; } = new();
+
+        public AddressPageViewModel()
+        {
+            RegistrationAddressCommand.Subscribe(ExeRegistrationAddressCommand);
+        }
+
+        private void ExeRegistrationAddressCommand()
+        {
+            var item = new AddressModel()
+            {
+                Name = InputName.Value,
+                IP = InputIP.Value,
+                Port = InputPort.Value
+            };
+            AddressModel.Add(item);
+
+            InputName.Value = InputIP.Value = InputPort.Value = "";
+        }
     }
 }
