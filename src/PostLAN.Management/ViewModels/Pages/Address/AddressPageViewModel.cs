@@ -13,16 +13,19 @@ namespace PostLAN.Management.ViewModels.Pages.Address
     public class AddressPageViewModel
     {
         public ReactiveCollection<AddressModel> AddressModel { get; } = [];
+        public ReactivePropertySlim<AddressModel> SelectedAddressModel { get; } = new();
 
         public ReactivePropertySlim<string> InputName { get; } = new();
         public ReactivePropertySlim<string> InputIP { get; } = new();
         public ReactivePropertySlim<string> InputPort { get; } = new();
 
         public ReactiveCommandSlim RegistrationAddressCommand { get; } = new();
+        public ReactiveCommandSlim DeleteAddressCommand { get; } = new();
 
         public AddressPageViewModel()
         {
             RegistrationAddressCommand.Subscribe(ExeRegistrationAddressCommand);
+            DeleteAddressCommand.Subscribe(ExeDeleteAddressCommand);
         }
 
         private void ExeRegistrationAddressCommand()
@@ -36,6 +39,11 @@ namespace PostLAN.Management.ViewModels.Pages.Address
             AddressModel.Add(item);
 
             InputName.Value = InputIP.Value = InputPort.Value = "";
+        }
+
+        private void ExeDeleteAddressCommand()
+        {
+            AddressModel.Remove(SelectedAddressModel.Value);
         }
     }
 }

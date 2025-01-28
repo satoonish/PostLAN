@@ -17,9 +17,11 @@
         <ScrollViewer Height="200">
             <DataGrid
                 ItemsSource="{Binding AddressModel}"
+                SelectedItem="{Binding SelectedAddressModel.Value}"
                 AutoGenerateColumns="False"
                 CanUserAddRows="False"
-                IsReadOnly="True">
+                IsReadOnly="True"
+                SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="名称" Binding="{Binding Name}"/>
                     <DataGridTextColumn Header="IP アドレス" Binding="{Binding IP}"/>
@@ -38,6 +40,12 @@
                 <TextBox Text="{Binding InputPort.Value}"/>
 
                 <Button Content="登録する" Command="{Binding RegistrationAddressCommand}"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="登録情報削除">
+            <StackPanel>
+                <Button Content="削除する" Command="{Binding DeleteAddressCommand}"/>
             </StackPanel>
         </GroupBox>
     </StackPanel>
