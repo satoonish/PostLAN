@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostLAN.Core", "src\PostLAN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostLAN.Management", "src\PostLAN.Management\PostLAN.Management.csproj", "{1ADD8589-2D7E-4E6A-B2B2-C0DDAD1C9584}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostLAN.Hosting", "src\PostLAN.Hosting\PostLAN.Hosting.csproj", "{996DE9FD-2F38-4FE6-9BD6-25EDDB6E664B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostLAN.View", "src\PostLAN.View\PostLAN.View.csproj", "{D21348E0-5CE2-4FB4-AB04-C74B5DDEFB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostLAN.ViewModel", "src\PostLAN.ViewModel\PostLAN.ViewModel.csproj", "{B22F8F06-6C0F-4EED-9C87-0D4D3E443C56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{1ADD8589-2D7E-4E6A-B2B2-C0DDAD1C9584}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ADD8589-2D7E-4E6A-B2B2-C0DDAD1C9584}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ADD8589-2D7E-4E6A-B2B2-C0DDAD1C9584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{996DE9FD-2F38-4FE6-9BD6-25EDDB6E664B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996DE9FD-2F38-4FE6-9BD6-25EDDB6E664B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996DE9FD-2F38-4FE6-9BD6-25EDDB6E664B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996DE9FD-2F38-4FE6-9BD6-25EDDB6E664B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21348E0-5CE2-4FB4-AB04-C74B5DDEFB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21348E0-5CE2-4FB4-AB04-C74B5DDEFB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21348E0-5CE2-4FB4-AB04-C74B5DDEFB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21348E0-5CE2-4FB4-AB04-C74B5DDEFB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B22F8F06-6C0F-4EED-9C87-0D4D3E443C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22F8F06-6C0F-4EED-9C87-0D4D3E443C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22F8F06-6C0F-4EED-9C87-0D4D3E443C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22F8F06-6C0F-4EED-9C87-0D4D3E443C56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
