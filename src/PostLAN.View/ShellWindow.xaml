@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PostLAN.View"
         mc:Ignorable="d"
-        Title="ShellWindow" Height="450" Width="800">
+        Title="ShellWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance Type={x:Type local:DesignShellWindowViewModel}, IsDesignTimeCreatable=True}">
     <Grid>
         
     </Grid>
